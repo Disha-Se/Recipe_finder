@@ -1,4 +1,4 @@
-const API_KEY = '8ed7a9e3c5dc435696aa73f0497e89de'; // Replace with your Spoonacular API Key 
+const API_KEY = ''; #Replace with your Spoonacular API Key 
 const form = document.getElementById('ingredient-form');
 const recipesDiv = document.getElementById('recipes');
 const favoritesButton = document.getElementById('show-favorites');
