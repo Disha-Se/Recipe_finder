@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Recipe Finder</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .hidden {
+      display: none;
+    }
+
+    #shopping-list {
+      border: 1px solid #ccc;
+      padding: 1rem;
+      margin-top: 1rem;
+      background-color: #f9f9f9;
+    }
+
+    .recipe-list {
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Recipe Finder 🍳</h1>
+
+    <!-- Ingredient input form with diet filter -->
+    <form id="ingredient-form">
+      <input type="text" id="ingredients" placeholder="Enter ingredients (comma separated)" required />
+      
+      <select id="diet">
+        <option value="">Select Diet (Optional)</option>
+        <option value="vegetarian">Vegetarian</option>
+        <option value="vegan">Vegan</option>
+        <option value="glutenFree">Gluten-Free</option>
+        <option value="dairyFree">Dairy-Free</option>
+        <option value="paleo">Paleo</option>
+        <option value="keto">Keto</option>
+      </select>
+      
+      <button type="submit">Find Recipes</button>
+    </form>
+
+    <!-- Dark Mode Toggle -->
+    <button id="dark-mode-toggle">🌙 Dark Mode</button>
+
+    <!-- Button to show favorite recipes -->
+    <button id="show-favorites">Show Favorite Recipes</button>
+
+    <!-- View/Clear Shopping List -->
+    <button id="view-shopping-list">🛍️ View Shopping List</button>
+    <button id="clear-shopping-list">🗑️ Clear Shopping List</button>
+
+    <!-- Meal Plan Calendar -->
+    <div id="meal-plan">
+      <h2>Meal Plan</h2>
+      <div class="day" id="monday"><span>Monday</span><button>Select Meal</button></div>
+      <div class="day" id="tuesday"><span>Tuesday</span><button>Select Meal</button></div>
+      <div class="day" id="wednesday"><span>Wednesday</span><button>Select Meal</button></div>
+      <div class="day" id="thursday"><span>Thursday</span><button>Select Meal</button></div>
+      <div class="day" id="friday"><span>Friday</span><button>Select Meal</button></div>
+      <div class="day" id="saturday"><span>Saturday</span><button>Select Meal</button></div>
+      <div class="day" id="sunday"><span>Sunday</span><button>Select Meal</button></div>
+    </div>
+
+    <!-- Recipe search results -->
+    <div id="recipes" class="recipe-list"></div>
+
+    <!-- Search history -->
+    <div id="search-history">
+      <h3>Search History</h3>
+      <div id="history-list"></div>
+    </div>
+
+    <!-- Favorite recipes list -->
+    <div id="favorites-list" class="recipe-list"></div>
+
+    <!-- Shopping list section -->
+    <div id="shopping-list" class="hidden">
+      <h2>🛒 Shopping List</h2>
+      <ul id="shopping-items"></ul>
+      <button id="copy-list">📋 Copy to Clipboard</button>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

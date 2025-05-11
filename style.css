@@ -1,0 +1,358 @@
+/* General Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f5f5f5;
+  color: #333;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: #eaeaea;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+h1 {
+  color: #f45d22;
+  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+}
+
+button {
+  padding: 0.8rem 1.6rem;
+  font-size: 1.1rem;
+  background-color: #f45d22;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #d94614;
+  transform: scale(1.05);
+}
+
+/* Dark Mode Toggle */
+#dark-mode-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #f45d22;
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+#dark-mode-toggle:hover {
+  background-color: #d94614;
+  transform: scale(1.05);
+}
+
+/* Form Styles */
+form {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+input, select {
+  padding: 0.8rem;
+  font-size: 1.1rem;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+input {
+  width: 60%;
+}
+
+select {
+  width: 25%;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #f45d22;
+}
+
+/* Recipe Cards */
+.recipe-list, #favorites-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.recipe-card {
+  border: 1px solid #ddd;
+  padding: 1.2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background: white;
+  text-align: left;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+}
+
+.recipe-card:hover {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+
+.recipe-card img {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.recipe-card img:hover {
+  transform: scale(1.05);
+}
+
+.recipe-card h3 {
+  margin: 0.5rem 0;
+  font-size: 1.3rem;
+  color: #333;
+}
+
+.recipe-card a {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #f45d22;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.recipe-card a:hover {
+  color: #d94614;
+}
+
+/* Favorite Icon (❤️/🤍 toggle) */
+.favorite-icon {
+  font-size: 1.5rem;
+  cursor: pointer;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.favorite-icon:hover {
+  transform: scale(1.2);
+}
+
+/* Rating Stars */
+.rating {
+  display: flex;
+  gap: 0.2rem;
+  margin-top: 0.5rem;
+}
+
+.star {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.star:hover {
+  color: #f45d22;
+}
+
+/* Favorites Section Styling */
+#favorites-list .recipe-card {
+  background-color: #f9f9f9;
+}
+
+/* Shopping List Styles */
+#shopping-list {
+  background-color: #fff;
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: none; /* Initially hidden */
+}
+
+#shopping-list.visible {
+  display: block; /* Show when the 'visible' class is added */
+}
+
+#shopping-list ul {
+  list-style: none;
+  padding-left: 0;
+  text-align: left;
+}
+
+#shopping-list li {
+  margin-bottom: 0.8rem;
+}
+
+#shopping-list input[type="checkbox"] {
+  margin-right: 0.5rem;
+  transform: scale(1.2);
+}
+body.dark-mode #shopping-list {
+  background-color: #333; /* dark background */
+  color: #fff;            /* white text */
+}
+
+body.dark-mode #shopping-list li {
+  color: #fff;
+}
+
+body.dark-mode #shopping-list input[type="checkbox"] {
+  accent-color: #fff;
+}
+
+
+/* Search History Styles */
+#search-history {
+  margin-top: 2rem;
+  text-align: left;
+}
+
+.search-history-btn {
+  display: block;
+  background-color: #f45d22;
+  color: white;
+  padding: 0.8rem;
+  margin: 0.5rem 0;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.search-history-btn:hover {
+  background-color: #d94614;
+  transform: scale(1.05);
+}
+
+/* Meal Plan Calendar */
+#meal-plan {
+  margin-top: 2rem;
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#meal-plan h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #f45d22;
+}
+
+#meal-plan .day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+#meal-plan .day span,
+#meal-plan .meal-slot label,
+#meal-plan .meal-slot select,
+#meal-plan .day div {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+/* Buttons inside days */
+#meal-plan .day button {
+  margin-top: 0.5rem;
+  background-color: #f45d22;
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+#meal-plan .day button:hover {
+  background-color: #d94614;
+  transform: scale(1.05);
+}
+
+/* DARK MODE SPECIFIC OVERRIDES */
+body.dark-mode #meal-plan {
+  background-color: #1e1e1e;
+}
+
+body.dark-mode #meal-plan h2,
+body.dark-mode #meal-plan .day span,
+body.dark-mode #meal-plan .meal-slot label,
+body.dark-mode #meal-plan .meal-slot select,
+body.dark-mode #meal-plan .day div {
+  color: #eaeaea;
+}
+
+body.dark-mode select {
+  background-color: #2a2a2a;
+  border-color: #444;
+  color: #eaeaea;
+}
+
+body.dark-mode input,
+body.dark-mode select {
+  background-color: #333;
+  border-color: #555;
+  color: #eaeaea;
+}
+
+body.dark-mode button {
+  background-color: #d94614;
+  color: white;
+}
+
+body.dark-mode button:hover {
+  background-color: #f45d22;
+}
+
+/* Utility */
+.hidden {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  form {
+    flex-direction: column;
+  }
+
+  input, select {
+    width: 100%;
+  }
+
+  #meal-plan {
+    padding: 1rem;
+  }
+
+  #meal-plan .day {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  #dark-mode-toggle {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+  }
+}
